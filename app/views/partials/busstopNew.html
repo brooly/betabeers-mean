@@ -1,0 +1,16 @@
+<div ng-include="'partials/navbar'"></div>
+<div>
+  <h1 style="display: inline-block">Nueva Parada</h1>
+</div>
+<form role="form">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="title" placeholder="Nombre de la parada" ng-model="busstop.title">
+  </div>
+  <div class="form-group">
+    <label for="poste">Poste</label>
+    <input type="text" class="form-control" id="poste" placeholder="Poste" ng-model="busstop.pole">
+  </div>
+  <button type="submit" class="btn btn-primary" ng-click="doNuevaParada()">Crear</button>
+  <button type="submit" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+</form>

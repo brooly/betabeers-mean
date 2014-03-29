@@ -1,0 +1,18 @@
+<div ng-include="'partials/navbar'"></div>
+<div class="row">
+  <label>Linea</label>
+  <input type="text" ng-model="linea"/>
+</div>
+<br/>
+
+<div ng-repeat="marker in busMarkers" ui-map-marker="busMarkers[$index]"
+  ui-event="{'map-click': 'openMarkerInfo(marker)'}">
+</div>
+ 
+<div ui-map-info-window="myInfoWindow" style="height:300px;">
+  <h1>{{currentTitle}}</h1>
+  <img src="http://maps.googleapis.com/maps/api/streetview?size=200x200&location={{currentMarkerLat}},{{currentMarkerLng}}&fov=90&heading=235&pitch=10&sensor=false"/>
+</div>
+
+<div id="map_canvas" ui-map="myMap" style="height:700px; width:700px; margin:auto;" ui-options="mapOptions" ui-event="{'map-idle' : 'loadBusStops()'}">
+</div>

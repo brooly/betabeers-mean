@@ -1,0 +1,19 @@
+<div class="row ">
+  <div class="col-md-12 center-block">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" ng-click="verTodo = !verTodo">
+          <span class="glyphicon"
+          ng-class="{'glyphicon-chevron-right' : !verTodo,'glyphicon-chevron-down' : verTodo}"></span>
+          {{ busstop.title }}
+        </h3>
+      </div>
+      <div class="panel-body" ng-if="verTodo">
+        <label>Poste</label><p ng-bind="busstop.pole"></p>
+        <label>Lineas</label><p ng-bind="busstop.lines"></p>
+        <label>Fecha de creacion</label><p ng-bind="busstop.created | date:'dd/MM/yyyy'"></p>
+        <button ng-click="delete(busstop)" class="btn btn-danger">Borrar</button>
+      </div>
+    </div>
+  </div>
+</div>
